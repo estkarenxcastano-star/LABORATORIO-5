@@ -359,15 +359,12 @@ print("RR medio:", RR2_mean)
 print("SDNN:", RR2_sd)
 print("FC media (lpm):", HR2)
 ```
-===== SEGMENTO 1 (Reposo) =====
-RR medio: 0.47212007874015743
-SDNN: 0.14237386189807577
-FC media (lpm): 127.0863127874348
+| Parámetro        | Segmento 1 (Reposo)     | Segmento 2 (Lectura)     |
+|------------------|--------------------------|----------------------------|
+| RR medio (s)     | 0.47212007874015743      | 0.506375                   |
+| SDNN (s)         | 0.14237386189807577      | 0.16822658937379914        |
+| FC media (lpm)   | 127.0863127874348        | 118.48926191063934         |
 
-===== SEGMENTO 2 (Lectura) =====
-RR medio: 0.506375
-SDNN: 0.16822658937379914
-FC media (lpm): 118.48926191063934
 
 El siguiente código organiza los valores calculados de HRV en un DataFrame para mostrar una tabla comparativa entre los segmentos de reposo y lectura.
 
