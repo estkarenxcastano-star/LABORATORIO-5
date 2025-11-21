@@ -399,6 +399,107 @@ Por otro lado, en el segundo segmento —registrado durante la lectura— se obs
 
 Los cambios observados entre ambos segmentos evidencian una modificación clara en el balance autonómico. Mientras que el estado de reposo presentó una predominancia simpática relativa, la actividad de lectura mostró un predominio parasimpático y un aumento de la HRV. Estas diferencias reflejan la capacidad del sistema cardiovascular para adaptarse dinámicamente a distintas condiciones fisiológicas y cognitivas.
 
+# PARTE C
+
+<img width="358" height="627" alt="image" src="https://github.com/user-attachments/assets/b4026862-d4fc-4cfb-9c90-465f7c3b514e" />
+
++ **Construcción del diagrama de Poincaré**
+
+```python
+import matplotlib.pyplot as plt
+
+# ======================
+#  DIAGRAMA DE POINCARÉ
+# ======================
+
+def poincare_plot(RR, title):
+    if len(RR) < 2:
+        print("No se puede generar el diagrama, muy pocos RR.")
+        return
+    RR_n = RR[:-1]
+    RR_n1 = RR[1:]
+
+    plt.figure(figsize=(6,6))
+    plt.scatter(RR_n, RR_n1, s=10, alpha=0.6)
+    plt.xlabel("RR[n] (s)")
+    plt.ylabel("RR[n+1] (s)")
+    plt.title(title)
+    plt.grid(True)
+    plt.axis("equal")
+    plt.tight_layout()
+    plt.show()
+
+
+# Segmento 1 (reposo)
+poincare_plot(RR1, "Diagrama de Poincaré – Segmento 1 (Reposo)")
+
+# Segmento 2 (lectura)
+poincare_plot(RR2, "Diagrama de Poincaré – Segmento 2 (Lectura)")
+```
+
+<img width="472" height="469" alt="image" src="https://github.com/user-attachments/assets/517fc80f-52d3-4a20-98e3-8e19be0c43f5" />
+
+
+
+<img width="466" height="479" alt="image" src="https://github.com/user-attachments/assets/b1312bdf-fe6c-4621-97a5-155a867790d7" />
+
++ **Calcular los valores de los índices tanto de actividad vagal (CVI) como de actividad simpática (CSI) que se obtienen a partir del diagrama de Poincaré**
+
+```python
+import numpy as np
+import math
+
+def compute_sd1_sd2(RR):
+    # Diferencias sucesivas
+    dRR = np.diff(RR)
+
+    # SD1
+    SD1 = np.sqrt(0.5) * np.std(dRR, ddof=1)
+
+    # SD2
+    SD_RR = np.std(RR, ddof=1)
+    SD2 = np.sqrt(2*(SD_RR**2) - SD1**2)
+
+    return SD1, SD2
+
+def compute_cvi_csi(SD1, SD2):
+    CVI = np.log10(SD1 * SD2)
+    CSI = SD2 / SD1
+    return CVI, CSI
+
+# Segmento 1
+SD1_1, SD2_1 = compute_sd1_sd2(RR1)
+CVI_1, CSI_1 = compute_cvi_csi(SD1_1, SD2_1)
+
+# Segmento 2
+SD1_2, SD2_2 = compute_sd1_sd2(RR2)
+CVI_2, CSI_2 = compute_cvi_csi(SD1_2, SD2_2)
+
+
+data = {
+    "Parámetro": ["SD1 (s)", "SD2 (s)", "CVI", "CSI"],
+    "Segmento 1 (Reposo)": [0.1374299599317766, 0.14715157573772465, -1.6941531318834555, 1.0707400832043537],
+    "Segmento 2 (Lectura)": [0.16488999533328808, 0.17149828284102417, -1.548545924495526, 1.040076931675548]
+}
+
+tabla_indices = pd.DataFrame(data)
+tabla_indices
+```
+
+| Parámetro | Segmento 1 (Reposo) | Segmento 2 (Lectura) |
+|-----------|----------------------|------------------------|
+| SD1 (s)   | 0.137430             | 0.164890               |
+| SD2 (s)   | 0.147152             | 0.171498               |
+| CVI       | -1.694153            | -1.548546              |
+| CSI       | 1.070740             | 1.040077               |
+
+
+## REFERENCIAS BIBLIOGRÁFICAS
+
+
+
+
+
 
     
 
