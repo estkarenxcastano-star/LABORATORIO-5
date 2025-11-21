@@ -62,8 +62,8 @@ df.head()
 
 + **Gráfica señal adquirida**
 
-  ```python
-  import matplotlib.pyplot as plt
+```python
+import matplotlib.pyplot as plt
   import numpy as np
 
   plt.figure(figsize=(8, 5))  # tamaño de la figura
@@ -90,6 +90,7 @@ df.head()
 
   plt.tight_layout()
   plt.show()
+  
   ```
   <img width="630" height="392" alt="image" src="https://github.com/user-attachments/assets/80db840b-5d96-44af-a310-ec82b5c58c3c" />
 
@@ -173,8 +174,8 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
 <img width="948" height="310" alt="image" src="https://github.com/user-attachments/assets/fbf1883c-8dbd-4624-bf89-d38aaf6f8663" />
 
 + **Dividir la señal filtrada en dos segmentos de señal con duración de 2 minutoscada uno**
-  ```python
-  # Duración de cada segmento (2 minutos)
+ ```python
+# Duración de cada segmento (2 minutos)
   dur_seg = 2 * 60  # 120 s
 
   mask1 = (t >= 0) & (t < dur_seg)          # 0–120 s
@@ -207,6 +208,7 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
   plt.tight_layout()
   plt.show()
   ```
+
   + *Seg1 duración [s]: 119.9995*
   + *Seg2 duración [s]: 119.99950000000001*
   
