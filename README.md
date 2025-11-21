@@ -496,7 +496,21 @@ tabla_indices
 
 ## REFERENCIAS BIBLIOGRÁFICAS
 
+Sistema nervioso parasimpático. (2023, October 30). Kenhub. https://www.kenhub.com/es/library/anatomia-es/sistema-nervioso-parasimpatico
 
+LeBouef, T., Yaker, Z., & Whited, L. (2023, May 1). Physiology, autonomic nervous system. StatPearls - NCBI Bookshelf. https://www.ncbi.nlm.nih.gov/books/NBK538516/
+
+Coon, E. (2025, May 9). Generalidades sobre el sistema nervioso autónomo. Manual MSD Versión Para Profesionales. https://www.msdmanuals.com/es/professional/trastornos-neurol%C3%B3gicos/sistema-nervioso-aut%C3%B3nomo/generalidades-sobre-el-sistema-nervioso-aut%C3%B3nomo
+
+Kasahara, Y., Yoshida, C., Saito, M., & Kimura, Y. (2021). Assessments of heart rate and sympathetic and parasympathetic nervous activities of normal mouse fetuses at different stages of fetal development using fetal electrocardiography. Frontiers in Physiology, 12. https://doi.org/10.3389/fphys.2021.652828
+
+Olshansky, B., Sabbah, H. N., Hauptman, P. J., & Colucci, W. S. (2008). Parasympathetic nervous system and heart failure. Circulation, 118(8), 863–871. https://doi.org/10.1161/circulationaha.107.760405
+
+Electrophysiology, T. F. O. T. E. S. O. C. T. N. A. (1996). Heart rate variability. Circulation, 93(5), 1043–1065. https://doi.org/10.1161/01.cir.93.5.1043
+
+Pichot, V., Roche, F., Celle, S., Barthélémy, J., & Chouchou, F. (2016). HRVAnalysis: a free software for analyzing cardiac autonomic activity. Frontiers in Physiology, 7, 557. https://doi.org/10.3389/fphys.2016.00557
+
+Wang, B., Liu, D., Gao, X., & Luo, Y. (2022). Three‐Dimensional poincaré plot analysis for heart rate variability. Complexity, 2022(1). https://doi.org/10.1155/2022/3880047
 
 
 
