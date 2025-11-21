@@ -209,6 +209,7 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
   ```
   + *Seg1 duración [s]: 119.9995*
   + *Seg2 duración [s]: 119.99950000000001*
+  
 
   <img width="950" height="306" alt="image" src="https://github.com/user-attachments/assets/d841ea8e-12a7-4ae3-b602-8f90e6a2aee0" />
 
@@ -297,6 +298,111 @@ print("  Número de intervalos:", len(RR2))
 + **Segmento 2:**
   RR2 = [0.7655 0.508  0.314  0.47   0.6    0.404  0.6035 0.404  0.6975 0.464 ]  ...
   Número de intervalos: 236
+
+  + **Gráfica de la nueva señal**
+```python
+# ================================
+# Gráfica de la nueva señal R-R
+# ================================
+
+plt.figure(figsize=(10,4))
+plt.plot(tRR1, RR1, '.-', label='RR Segmento 1')
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Intervalo R-R [s]")
+plt.title("Nueva señal de intervalos R-R (Segmento 1)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+plt.figure(figsize=(10,4))
+plt.plot(tRR2, RR2, '.-', label='RR Segmento 2')
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Intervalo R-R [s]")
+plt.title("Nueva señal de intervalos R-R (Segmento 2)")
+plt.grid(True)
+plt.legend()
+plt.show()
+```
+
+<img width="677" height="317" alt="image" src="https://github.com/user-attachments/assets/1dd31dc4-5625-4f76-bca1-6ec08bfd147c" />
+
+
+<img width="677" height="310" alt="image" src="https://github.com/user-attachments/assets/0f00c805-ed97-4fc2-b543-144c96f93880" />
+
++ **Comparar los valores de los parámetros básicos de la HRV en el dominio del tiempo, como la media de los intervalos R-R y su desviación estándar, entre ambos segmentos de señal ECG**
+
+```python
+# ================================
+# Estadísticas de intervalos RR
+# ================================
+
+import numpy as np
+
+def stats_RR(RR):
+    if len(RR) == 0:
+        return np.nan, np.nan, np.nan
+    RR_mean = np.mean(RR)
+    RR_sd   = np.std(RR, ddof=1)
+    HR      = 60 / RR_mean
+    return RR_mean, RR_sd, HR
+
+RR1_mean, RR1_sd, HR1 = stats_RR(RR1)
+RR2_mean, RR2_sd, HR2 = stats_RR(RR2)
+
+print("===== SEGMENTO 1 (Reposo) =====")
+print("RR medio:", RR1_mean)
+print("SDNN:", RR1_sd)  #Representa cuánta variabilidad hay en los intervalos R–R.
+print("FC media (lpm):", HR1)
+
+print("\n===== SEGMENTO 2 (Lectura) =====")
+print("RR medio:", RR2_mean)
+print("SDNN:", RR2_sd)
+print("FC media (lpm):", HR2)
+```
+===== SEGMENTO 1 (Reposo) =====
+RR medio: 0.47212007874015743
+SDNN: 0.14237386189807577
+FC media (lpm): 127.0863127874348
+
+===== SEGMENTO 2 (Lectura) =====
+RR medio: 0.506375
+SDNN: 0.16822658937379914
+FC media (lpm): 118.48926191063934
+
+El siguiente código organiza los valores calculados de HRV en un DataFrame para mostrar una tabla comparativa entre los segmentos de reposo y lectura.
+
+```python
+import pandas as pd
+
+# Tus valores calculados
+data = {
+    "Parámetro": ["RR medio (s)", "SDNN (s)", "FC media (lpm)"],
+    "Segmento 1 (Reposo)": [0.472, 0.142, 127.1],
+    "Segmento 2 (Lectura)": [0.506, 0.168, 118.5]
+}
+
+# Crear tabla
+tabla_hfv = pd.DataFrame(data)
+
+# Mostrar tabla
+tabla_hfv
+```
+
+| Parámetro        | Segmento 1 (Reposo) | Segmento 2 (Lectura) |
+|------------------|---------------------|------------------------|
+| RR medio (s)     | 0.472               | 0.506                  |
+| SDNN (s)         | 0.142               | 0.168                  |
+| FC media (lpm)   | 127.100             | 118.500                |
+
+El análisis comparativo de los parámetros básicos de la variabilidad de la frecuencia cardíaca (HRV) en el dominio del tiempo permitió identificar diferencias significativas entre los dos segmentos de la señal ECG evaluados. En el primer segmento, correspondiente a la condición de reposo, se obtuvo un intervalo R–R medio menor y una desviación estándar (SDNN) relativamente reducida, en conjunto con una frecuencia cardíaca más elevada. Este comportamiento es indicativo de una menor variabilidad del ritmo cardiaco y sugiere una mayor influencia del sistema nervioso simpático, asociado a estados de activación fisiológica o demanda metabólica incrementada.
+
+
+Por otro lado, en el segundo segmento —registrado durante la lectura— se observó un aumento tanto en el intervalo R–R medio como en la desviación estándar de los intervalos, acompañado de una disminución en la frecuencia cardíaca. Este patrón refleja un incremento en la variabilidad cardiaca y es coherente con una mayor participación del sistema nervioso parasimpático, el cual tiende a disminuir la frecuencia cardiaca y a favorecer una regulación más flexible del ritmo autonómico.
+
+
+Los cambios observados entre ambos segmentos evidencian una modificación clara en el balance autonómico. Mientras que el estado de reposo presentó una predominancia simpática relativa, la actividad de lectura mostró un predominio parasimpático y un aumento de la HRV. Estas diferencias reflejan la capacidad del sistema cardiovascular para adaptarse dinámicamente a distintas condiciones fisiológicas y cognitivas.
+
+
     
 
 
