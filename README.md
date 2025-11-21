@@ -1,5 +1,5 @@
 # LABORATORIO 5
-# OBJETIVO
+### OBJETIVO
 Identificar cambios en el balance autonómico mediante análisis temporal de la
 variabilidad de la frecuencia cardíaca (HRV).
 
@@ -10,6 +10,8 @@ variabilidad de la frecuencia cardíaca (HRV).
 Se realizó una investigación teórica, sobre los siguientes temas:
 
 **1. Actividad simpática y parasimpática del sistema nervioso autónomo**
+
+
 El sistema nervioso autónomo (SNA) es la parte del sistema nervioso encargada de regular de manera involuntaria funciones vitales como la frecuencia cardíaca, la respiración, la digestión, la actividad glandular y el diámetro pupilar. Su función principal es mantener la homeostasis del organismo y permitir que el cuerpo responda adecuadamente a las demandas internas y externas. El SNA se divide en dos ramas que actúan de forma complementaria y muchas veces opuesta: el sistema nervioso simpático y el sistema nervioso parasimpático.
 
 
@@ -22,12 +24,18 @@ Por su parte, el sistema nervioso parasimpático promueve la respuesta de “rep
 Ambos sistemas, simpático y parasimpático, trabajan de manera coordinada para mantener el equilibrio del organismo. Aunque sus acciones suelen ser opuestas, no actúan de forma aislada; más bien, el estado fisiológico depende del predominio relativo de uno u otro según las necesidades del momento. En situación de reposo suele dominar el parasimpático, mientras que en momentos de estrés o actividad física predomina el simpático. Esta interacción permite respuestas rápidas, adaptativas y eficientes, garantizando el adecuado funcionamiento de los órganos y sistemas del cuerpo.
 
 **2. Efecto de la actividad simpática y parasimpática en la frecuencia cardíaca**
+
+
 La frecuencia cardíaca está regulada por el equilibrio entre la actividad simpática y parasimpática del sistema nervioso autónomo. La actividad simpática aumenta la frecuencia cardíaca mediante la liberación de noradrenalina y adrenalina, que actúan sobre receptores β1 del corazón, acelerando la despolarización del nodo sinoauricular y mejorando la conducción eléctrica, lo que prepara al organismo para situaciones de estrés, alarma o esfuerzo físico. En contraste, la actividad parasimpática, principalmente a través del nervio vago y la liberación de acetilcolina sobre receptores muscarínicos M2, disminuye la frecuencia cardíaca al reducir la velocidad de despolarización del nodo SA y enlentecer la conducción en el nodo AV, predominando en condiciones de reposo y favoreciendo la conservación de energía. Así, el ritmo cardíaco final es el resultado del balance dinámico entre ambas ramas, que ajustan el funcionamiento del corazón según las necesidades del organismo.
 
 **3. Variabilidad de la frecuencia cardíaca (HRV) obtenida a partir de la señal electrocardiográfica (ECG)**
+
+
 La variabilidad de la frecuencia cardíaca (HRV) es una medida que refleja las fluctuaciones naturales en el intervalo de tiempo entre un latido cardíaco y el siguiente, conocidas como intervalos R-R, las cuales se obtienen a partir del análisis de la señal electrocardiográfica (ECG). Estas variaciones no son aleatorias, sino que representan la interacción dinámica entre las ramas simpática y parasimpática del sistema nervioso autónomo. Para calcular la HRV, primero se identifican los picos R en el ECG —los puntos de mayor amplitud del complejo QRS— y se determina la duración entre cada par de picos consecutivos; la serie de estos intervalos permite aplicar análisis temporales (como SDNN o RMSSD), frecuenciales (como las bandas LF y HF) o no lineales. Una HRV elevada indica un sistema autónomo flexible y eficiente, con predominio parasimpático y buena capacidad de adaptación fisiológica, mientras que valores bajos suelen asociarse con estrés, fatiga, disfunción autonómica o estados patológicos. En conjunto, la HRV derivada del ECG es una herramienta no invasiva, sensible y ampliamente utilizada para evaluar la regulación autonómica del corazón y el estado general del organismo.
 
 **4. Diagrama de Poincaré como herramienta de análisis de la serie R-R.**
+
+
 El diagrama de Poincaré es una herramienta gráfica utilizada para analizar la variabilidad de la frecuencia cardíaca (HRV) a partir de la serie de intervalos R-R obtenidos del electrocardiograma. Consiste en representar cada intervalo R-R en función del siguiente, es decir, colocar cada valor  RRn+1  en el eje horizontal y el intervalo siguiente  RRn+1  en el eje vertical. Al hacerlo, se genera una nube de puntos cuya forma y dispersión permiten visualizar de manera sencilla la dinámica del sistema nervioso autónomo. En condiciones fisiológicas normales, el gráfico adopta una forma elipsoidal cuyo ancho transversal, conocido como SD1, está relacionado con la variabilidad instantánea de los latidos y refleja principalmente la actividad parasimpática. Por otro lado, la longitud del eje mayor, conocida como SD2, representa la variabilidad a más largo plazo, influida tanto por modulaciones simpáticas como parasimpáticas. Un diagrama amplio y disperso suele asociarse con una regulación autonómica saludable y flexible, mientras que un patrón estrecho, lineal o muy compacto indica una disminución de la variabilidad, lo cual puede relacionarse con estrés, fatiga o disfunción autonómica. Gracias a su capacidad para mostrar patrones no lineales y ofrecer una interpretación visual rápida, el diagrama de Poincaré se considera un complemento valioso para el análisis tradicional de la HRV.
 
 + **Posteriormente se adquirió la señal ECG**
