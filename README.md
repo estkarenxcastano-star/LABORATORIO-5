@@ -1,1 +1,298 @@
-# LABORATORIO-5
+# LABORATORIO 5
+# OBJETIVO
+Identificar cambios en el balance autonómico mediante análisis temporal de la
+variabilidad de la frecuencia cardíaca (HRV).
+
+# PARTE A
+
+<img width="385" height="571" alt="image" src="https://github.com/user-attachments/assets/e1c437f6-2b18-4f31-b480-a99615fa7f83" />
+
+Se realizó una investigación teórica, sobre los siguientes temas:
+
+**1. Actividad simpática y parasimpática del sistema nervioso autónomo**
+El sistema nervioso autónomo (SNA) es la parte del sistema nervioso encargada de regular de manera involuntaria funciones vitales como la frecuencia cardíaca, la respiración, la digestión, la actividad glandular y el diámetro pupilar. Su función principal es mantener la homeostasis del organismo y permitir que el cuerpo responda adecuadamente a las demandas internas y externas. El SNA se divide en dos ramas que actúan de forma complementaria y muchas veces opuesta: el sistema nervioso simpático y el sistema nervioso parasimpático.
+
+
+El sistema nervioso simpático está asociado con la respuesta de “lucha o huida”, un conjunto de reacciones fisiológicas que se activan ante situaciones de estrés, peligro o aumento de la exigencia física. Cuando se activa esta rama, el organismo se prepara para la acción: aumenta la frecuencia y la fuerza de contracción del corazón, se dilatan las pupilas y los bronquios para mejorar la entrada de luz y aire, se movilizan las reservas de glucosa para obtener energía rápida y se redirige el flujo sanguíneo hacia los músculos esqueléticos. Al mismo tiempo, se inhiben funciones no prioritarias como la digestión, disminuyendo la motilidad gastrointestinal y las secreciones digestivas. También se produce vasoconstricción en piel y vísceras, sudoración y la liberación de adrenalina y noradrenalina desde la médula suprarrenal. En este sistema, la noradrenalina es el neurotransmisor predominante en las sinapsis posganglionares, mientras que la acetilcolina participa principalmente en las sinapsis preganglionares.
+
+
+Por su parte, el sistema nervioso parasimpático promueve la respuesta de “reposo y digestión”, predominante en condiciones de calma y recuperación. Su activación favorece funciones destinadas a conservar y restaurar la energía del organismo. Entre sus efectos se encuentran la disminución de la frecuencia cardíaca, la constricción pupilar, la broncoconstricción y la estimulación de la actividad del tracto gastrointestinal, lo que incluye aumento de la motilidad, secreciones digestivas y peristaltismo. Este sistema también estimula funciones como la salivación, la micción, la defecación y la actividad de glándulas lagrimales. A diferencia del simpático, el neurotransmisor predominante en las sinapsis tanto preganglionares como posganglionares es la acetilcolina, que actúa sobre receptores nicotínicos y muscarínicos.
+
+
+Ambos sistemas, simpático y parasimpático, trabajan de manera coordinada para mantener el equilibrio del organismo. Aunque sus acciones suelen ser opuestas, no actúan de forma aislada; más bien, el estado fisiológico depende del predominio relativo de uno u otro según las necesidades del momento. En situación de reposo suele dominar el parasimpático, mientras que en momentos de estrés o actividad física predomina el simpático. Esta interacción permite respuestas rápidas, adaptativas y eficientes, garantizando el adecuado funcionamiento de los órganos y sistemas del cuerpo.
+
+**2. Efecto de la actividad simpática y parasimpática en la frecuencia cardíaca**
+La frecuencia cardíaca está regulada por el equilibrio entre la actividad simpática y parasimpática del sistema nervioso autónomo. La actividad simpática aumenta la frecuencia cardíaca mediante la liberación de noradrenalina y adrenalina, que actúan sobre receptores β1 del corazón, acelerando la despolarización del nodo sinoauricular y mejorando la conducción eléctrica, lo que prepara al organismo para situaciones de estrés, alarma o esfuerzo físico. En contraste, la actividad parasimpática, principalmente a través del nervio vago y la liberación de acetilcolina sobre receptores muscarínicos M2, disminuye la frecuencia cardíaca al reducir la velocidad de despolarización del nodo SA y enlentecer la conducción en el nodo AV, predominando en condiciones de reposo y favoreciendo la conservación de energía. Así, el ritmo cardíaco final es el resultado del balance dinámico entre ambas ramas, que ajustan el funcionamiento del corazón según las necesidades del organismo.
+
+**3. Variabilidad de la frecuencia cardíaca (HRV) obtenida a partir de la señal electrocardiográfica (ECG)**
+La variabilidad de la frecuencia cardíaca (HRV) es una medida que refleja las fluctuaciones naturales en el intervalo de tiempo entre un latido cardíaco y el siguiente, conocidas como intervalos R-R, las cuales se obtienen a partir del análisis de la señal electrocardiográfica (ECG). Estas variaciones no son aleatorias, sino que representan la interacción dinámica entre las ramas simpática y parasimpática del sistema nervioso autónomo. Para calcular la HRV, primero se identifican los picos R en el ECG —los puntos de mayor amplitud del complejo QRS— y se determina la duración entre cada par de picos consecutivos; la serie de estos intervalos permite aplicar análisis temporales (como SDNN o RMSSD), frecuenciales (como las bandas LF y HF) o no lineales. Una HRV elevada indica un sistema autónomo flexible y eficiente, con predominio parasimpático y buena capacidad de adaptación fisiológica, mientras que valores bajos suelen asociarse con estrés, fatiga, disfunción autonómica o estados patológicos. En conjunto, la HRV derivada del ECG es una herramienta no invasiva, sensible y ampliamente utilizada para evaluar la regulación autonómica del corazón y el estado general del organismo.
+
+**4. Diagrama de Poincaré como herramienta de análisis de la serie R-R.**
+El diagrama de Poincaré es una herramienta gráfica utilizada para analizar la variabilidad de la frecuencia cardíaca (HRV) a partir de la serie de intervalos R-R obtenidos del electrocardiograma. Consiste en representar cada intervalo R-R en función del siguiente, es decir, colocar cada valor  RRn+1  en el eje horizontal y el intervalo siguiente  RRn+1  en el eje vertical. Al hacerlo, se genera una nube de puntos cuya forma y dispersión permiten visualizar de manera sencilla la dinámica del sistema nervioso autónomo. En condiciones fisiológicas normales, el gráfico adopta una forma elipsoidal cuyo ancho transversal, conocido como SD1, está relacionado con la variabilidad instantánea de los latidos y refleja principalmente la actividad parasimpática. Por otro lado, la longitud del eje mayor, conocida como SD2, representa la variabilidad a más largo plazo, influida tanto por modulaciones simpáticas como parasimpáticas. Un diagrama amplio y disperso suele asociarse con una regulación autonómica saludable y flexible, mientras que un patrón estrecho, lineal o muy compacto indica una disminución de la variabilidad, lo cual puede relacionarse con estrés, fatiga o disfunción autonómica. Gracias a su capacidad para mostrar patrones no lineales y ofrecer una interpretación visual rápida, el diagrama de Poincaré se considera un complemento valioso para el análisis tradicional de la HRV.
+
++ **Posteriormente se adquirió la señal ECG**
+
+Se adquirió la señal por medio del DAQ
+
+```python
+import pandas as pd
+import io
+
+df = pd.read_csv(io.BytesIO(uploaded['Señal_ECG (2).txt']),
+                 sep=r'\s+',
+                 header=0)
+
+df.head()
+```
+| t [s]   | Voltaje [V] |
+|---------|--------------|
+| 0.0000  | 2.334708     |
+| 0.0005  | 2.528737     |
+| 0.0010  | 2.202068     |
+| 0.0015  | 2.168427     |
+| 0.0020  | 2.459448     |
+
++ **Gráfica señal adquirida**
+
+  ```python
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  plt.figure(figsize=(8, 5))  # tamaño de la figura
+
+  plt.plot(df['t[s]'], df['voltaje[V]'], linewidth=0.5)
+
+  plt.xlim(0, 240)            # tiempo [s]
+  plt.ylim(-4, 4)             # voltaje [V]
+
+  plt.xticks(np.arange(0, 241, 50))
+  plt.yticks(np.arange(-4, 5, 1))
+
+
+  plt.xlabel('Tiempo [s]')
+  plt.ylabel('Voltaje [V]')
+  plt.title('Señal ECG')
+
+  # Cuadrícula
+  plt.grid(True)
+
+  ax = plt.gca()
+  ax.spines['top'].set_visible(False)
+  ax.spines['right'].set_visible(False)
+
+  plt.tight_layout()
+  plt.show()
+  ```
+  <img width="630" height="392" alt="image" src="https://github.com/user-attachments/assets/80db840b-5d96-44af-a310-ec82b5c58c3c" />
+
+  # PARTE B
+
+  <img width="311" height="653" alt="image" src="https://github.com/user-attachments/assets/ffc47a48-2b6f-4ac0-addf-4711b1b2863f" />
+
+Pre - procesamiento de la señal
+Aplicar los filtros digitales necesarios para eliminar el ruido de la señal, demostrando su diseño.
+- Diseñar un filtro IIR de acuerdo con los parámetros de la señal,
+- Obtener la ecuación en diferencias del filtro,
+- Implementar el filtro a la señal obtenida asumiendo parámetros iniciales en 0.
+
+```python
+# Leer el archivo
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Leer el archivo de texto (ajusta el nombre si Colab lo muestra distinto en 'uploaded')
+df = pd.read_csv("Señal_ECG (2).txt", sep=r"\s+", header=0)
+
+# Columnas: tiempo y voltaje
+t = df["t[s]"].values.astype(float)
+x = df["voltaje[V]"].values.astype(float)
+
+print("Muestras:", len(x))
+print("Tiempo total [s]:", t[-1] - t[0])
+print("Voltaje min/max:", x.min(), x.max())
+
+plt.figure(figsize=(12,4))
+plt.plot(t, x, alpha=0.7)
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Voltaje [V]")
+plt.title("ECG inicial (señal cruda)")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+**Este código carga la señal ECG desde un archivo, extrae sus datos y grafica el voltaje en función del tiempo.**
++ *Muestras: 480000*
++ *Tiempo total [s]: 239.9995*
++ *Voltaje min/max: 1.245738154976885 3.5*
+
+<img width="952" height="312" alt="image" src="https://github.com/user-attachments/assets/d7320795-d7d5-4042-a7ab-4a0e5621fdcf" />
+
++ **Diseño Filtro IIR**
+```python
+# Diseñar el filtro IIR, pasa–banda para ECG
+# se filtra aprox. 0.5 – 40 Hz.
+
+from scipy.signal import butter, sosfilt
+
+# Diseño del mismo filtro pero en forma SOS
+sos = butter(orden, [low, high], btype="bandpass", output="sos")
+print("Matriz SOS:\n", sos)
+
+# Filtrado con condiciones iniciales = 0
+ecg_filtrado = sosfilt(sos, x)
+
+plt.figure(figsize=(12,4))
+plt.plot(t, x, label="ECG inicial", alpha=0.4)
+plt.plot(t, ecg_filtrado, label="ECG filtrado", linewidth=1)
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Voltaje [V]")
+plt.title("ECG antes y después del filtro IIR Butterworth 0.5–40 Hz")
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+Matriz en formato SOS que contiene los coeficientes de cada sección biquad del filtro digital implementado.
+
+| b0           | b1           | b2           | a0 | a1           | a2           |
+|--------------|--------------|--------------|----|--------------|--------------|
+| 1.26657730e-05 | 2.53315460e-05 | 1.26657730e-05 | 1  | -1.78354137e+00 | 7.97115047e-01 |
+| 1.00000000e+00 | 2.00000000e+00 | 1.00000000e+00 | 1  | -1.89566508e+00 | 9.10625808e-01 |
+| 1.00000000e+00 | -2.00000000e+00 | 1.00000000e+00 | 1  | -1.99704749e+00 | 9.97050061e-01 |
+| 1.00000000e+00 | -2.00000000e+00 | 1.00000000e+00 | 1  | -1.99881745e+00 | 9.98819938e-01 |
+
+<img width="948" height="310" alt="image" src="https://github.com/user-attachments/assets/fbf1883c-8dbd-4624-bf89-d38aaf6f8663" />
+
++ **Dividir la señal filtrada en dos segmentos de señal con duración de 2 minutoscada uno**
+  ```python
+  # Duración de cada segmento (2 minutos)
+  dur_seg = 2 * 60  # 120 s
+
+  mask1 = (t >= 0) & (t < dur_seg)          # 0–120 s
+  mask2 = (t >= dur_seg) & (t < 2*dur_seg)  # 120–240 s
+
+  t1 = t[mask1]
+  ecg1 = ecg_filtrado[mask1]
+
+  t2 = t[mask2]
+  ecg2 = ecg_filtrado[mask2]
+
+  print("Seg1 duración [s]:", t1[-1] - t1[0])
+  print("Seg2 duración [s]:", t2[-1] - t2[0])
+
+  plt.figure(figsize=(12,4))
+  plt.plot(t1, ecg1)
+  plt.title("Segmento 1 (0–120 s)")
+  plt.xlabel("Tiempo [s]")
+  plt.ylabel("Voltaje [V]")
+  plt.grid(True)
+  plt.tight_layout()
+  plt.show()
+
+  plt.figure(figsize=(12,4))
+  plt.plot(t2, ecg2)
+  plt.title("Segmento 2 (120–240 s)")
+  plt.xlabel("Tiempo [s]")
+  plt.ylabel("Voltaje [V]")
+  plt.grid(True)
+  plt.tight_layout()
+  plt.show()
+  ```
+  + *Seg1 duración [s]: 119.9995*
+  + *Seg2 duración [s]: 119.99950000000001*
+
+  <img width="950" height="306" alt="image" src="https://github.com/user-attachments/assets/d841ea8e-12a7-4ae3-b602-8f90e6a2aee0" />
+
+  <img width="948" height="306" alt="image" src="https://github.com/user-attachments/assets/63aa3d69-0103-4063-862c-1fccf6897bff" />
+
+  + **Identificar los picos R en cada uno de los segmentos, calcular los intervalos R-R y obtener una nueva señal con dicha información**
+
+    ```python
+    from scipy.signal import find_peaks
+    import numpy as np
+
+    fs = 2000
+    min_rr = 0.3
+    dist = int(min_rr * fs)
+
+    # ====================================
+    # AJUSTE DE PROMINENCIA EN SEGMENTO 1
+    # ====================================
+    print("Probando prominencias para SEGMENTO 1…")
+
+    prom_candidates = [
+    np.std(ecg1) * 1.0,
+    np.std(ecg1) * 1.5,
+    np.std(ecg1) * 2.0,
+    np.std(ecg1) * 2.5
+    ]
+
+    for prom in prom_candidates:
+    pk, _ = find_peaks(ecg1, distance=dist, prominence=prom)
+    print(f"prom={prom:.4f} → {len(pk)} picos")
+
+    # 👉 Después, elige el mejor. Por ahora ponemos una opción provisional:
+    prom1 = np.std(ecg1) * 1.57    # AJÚSTALO según lo que imprima arriba
+
+    peaks1, _ = find_peaks(ecg1, distance=dist, prominence=prom1)
+
+
+    # ==============================
+    # SEGMENTO 2 (esto sí funcionaba)
+    # ==============================
+    prom2 = np.std(ecg2) * 3
+    peaks2, _ = find_peaks(ecg2, distance=dist, prominence=prom2)
+
+    print("\nPicos finales en SEGMENTO 1:", len(peaks1))
+    print("Picos finales en SEGMENTO 2:", len(peaks2))
+    ```
+
++ *Probando prominencias para SEGMENTO 1…*
++ *prom=0.0785 → 282 picos*
++ *prom=0.1177 → 257 picos*
++ *prom=0.1570 → 195 picos*
++ *prom=0.1962 → 108 picos*
+
++ *Picos finales en SEGMENTO 1: 255*
++ *Picos finales en SEGMENTO 2: 237*
+
+```python
+# ===========================================
+# Cálculo de intervalos R-R y nueva señal RR
+# ===========================================
+
+# Tiempos de cada pico R en cada segmento
+tR1 = t1[peaks1]       # tiempos de peaks del seg1
+tR2 = t2[peaks2]       # tiempos de peaks del seg2
+
+# Cálculo de intervalos R-R
+RR1 = np.diff(tR1)     # señal RR del segmento 1
+RR2 = np.diff(tR2)     # señal RR del segmento 2
+
+# Tiempo asociado a cada intervalo R-R
+tRR1 = tR1[1:]         # empieza en el segundo pico
+tRR2 = tR2[1:]
+
+print("Segmento 1:")
+print("  RR1 =", RR1[:10], " ...")
+print("  Número de intervalos:", len(RR1))
+
+print("\nSegmento 2:")
+print("  RR2 =", RR2[:10], " ...")
+print("  Número de intervalos:", len(RR2))
+```
++ **Segmento 1:**
+  RR1 = [1.1595 0.326  0.327  0.5105 0.355  0.3625 0.435  0.324  0.4655 0.5095]  ...
+  Número de intervalos: 254
+
++ **Segmento 2:**
+  RR2 = [0.7655 0.508  0.314  0.47   0.6    0.404  0.6035 0.404  0.6975 0.464 ]  ...
+  Número de intervalos: 236
+    
+
+
+
+
+
+
