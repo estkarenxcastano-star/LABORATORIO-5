@@ -66,7 +66,7 @@ df.head()
 import matplotlib.pyplot as plt
   import numpy as np
 
-  plt.figure(figsize=(8, 5))  # tamaño de la figura
+  plt.figure(figsize=(8, 5))  
 
   plt.plot(df['t[s]'], df['voltaje[V]'], linewidth=0.5)
 
@@ -110,7 +110,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Leer el archivo de texto (ajusta el nombre si Colab lo muestra distinto en 'uploaded')
+# Leer el archivo 
 df = pd.read_csv("Señal_ECG (2).txt", sep=r"\s+", header=0)
 
 # Columnas: tiempo y voltaje
@@ -227,9 +227,7 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
     min_rr = 0.3
     dist = int(min_rr * fs)
 
-    # ====================================
     # AJUSTE DE PROMINENCIA EN SEGMENTO 1
-    # ====================================
     print("Probando prominencias para SEGMENTO 1…")
 
     prom_candidates = [
@@ -243,15 +241,14 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
     pk, _ = find_peaks(ecg1, distance=dist, prominence=prom)
     print(f"prom={prom:.4f} → {len(pk)} picos")
 
-    # 👉 Después, elige el mejor. Por ahora ponemos una opción provisional:
-    prom1 = np.std(ecg1) * 1.57    # AJÚSTALO según lo que imprima arriba
+    
+    prom1 = np.std(ecg1) * 1.57   
 
     peaks1, _ = find_peaks(ecg1, distance=dist, prominence=prom1)
 
 
-    # ==============================
-    # SEGMENTO 2 (esto sí funcionaba)
-    # ==============================
+    # SEGMENTO 2
+    
     prom2 = np.std(ecg2) * 3
     peaks2, _ = find_peaks(ecg2, distance=dist, prominence=prom2)
 
@@ -259,7 +256,7 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
     print("Picos finales en SEGMENTO 2:", len(peaks2))
     ```
 
-+ *Probando prominencias para SEGMENTO 1…*
++ *SEGMENTO 1…*
 + *prom=0.0785 → 282 picos*
 + *prom=0.1177 → 257 picos*
 + *prom=0.1570 → 195 picos*
@@ -269,9 +266,7 @@ Matriz en formato SOS que contiene los coeficientes de cada sección biquad del 
 + *Picos finales en SEGMENTO 2: 237*
 
 ```python
-# ===========================================
 # Cálculo de intervalos R-R y nueva señal RR
-# ===========================================
 
 # Tiempos de cada pico R en cada segmento
 tR1 = t1[peaks1]       # tiempos de peaks del seg1
@@ -303,9 +298,7 @@ print("  Número de intervalos:", len(RR2))
 
   + **Gráfica de la nueva señal**
 ```python
-# ================================
 # Gráfica de la nueva señal R-R
-# ================================
 
 plt.figure(figsize=(10,4))
 plt.plot(tRR1, RR1, '.-', label='RR Segmento 1')
@@ -334,9 +327,7 @@ plt.show()
 + **Comparar los valores de los parámetros básicos de la HRV en el dominio del tiempo, como la media de los intervalos R-R y su desviación estándar, entre ambos segmentos de señal ECG**
 
 ```python
-# ================================
 # Estadísticas de intervalos RR
-# ================================
 
 import numpy as np
 
@@ -351,12 +342,12 @@ def stats_RR(RR):
 RR1_mean, RR1_sd, HR1 = stats_RR(RR1)
 RR2_mean, RR2_sd, HR2 = stats_RR(RR2)
 
-print("===== SEGMENTO 1 (Reposo) =====")
+print("SEGMENTO 1 (Reposo)")
 print("RR medio:", RR1_mean)
 print("SDNN:", RR1_sd)  #Representa cuánta variabilidad hay en los intervalos R–R.
 print("FC media (lpm):", HR1)
 
-print("\n===== SEGMENTO 2 (Lectura) =====")
+print("\nSEGMENTO 2 (Lectura)")
 print("RR medio:", RR2_mean)
 print("SDNN:", RR2_sd)
 print("FC media (lpm):", HR2)
@@ -373,7 +364,7 @@ El siguiente código organiza los valores calculados de HRV en un DataFrame para
 ```python
 import pandas as pd
 
-# Tus valores calculados
+# valores calculados
 data = {
     "Parámetro": ["RR medio (s)", "SDNN (s)", "FC media (lpm)"],
     "Segmento 1 (Reposo)": [0.472, 0.142, 127.1],
@@ -410,9 +401,7 @@ Los cambios observados entre ambos segmentos evidencian una modificación clara 
 ```python
 import matplotlib.pyplot as plt
 
-# ======================
 #  DIAGRAMA DE POINCARÉ
-# ======================
 
 def poincare_plot(RR, title):
     if len(RR) < 2:
